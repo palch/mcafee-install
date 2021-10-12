@@ -17,7 +17,7 @@ prod:
 nonprod:
   redhat:
     installable: <package_name>.zip
-    checksum: sha1:3c69ebfd5d356925004e045aa1021885219be68b
+    checksum: sha1:<checksum>
 
   windows:
     installable: <package_name>.exe
