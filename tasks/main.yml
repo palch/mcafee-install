@@ -1,0 +1,4 @@
+---
+- name: including tasks for installing MaCfee agent
+  include_tasks: install_{{ansible_os_family|lower}}.yml
+

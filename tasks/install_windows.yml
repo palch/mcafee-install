@@ -1,0 +1,21 @@
+---
+- name: Creating directory for storing installable
+  win_file:
+    path: "{{windows_tmp_dir}}"
+    state: directory
+    recurse: yes
+
+- name: Copying installable to target server
+  win_get_url:
+    url: "{{sw_url}}/{{env}}_packages/{{vars[env].windows.installable}}"
+    dest: "{{windows_tmp_dir}}"
+    checksum_algorithm: "{{vars[env].windows.checksum_algorithm}}"
+    checksum: "{{vars[env].windows.checksum}}"
+
+- name: install McAfee agent on windows
+  win_package:
+    path: "{{windows_tmp_dir}}\\{{vars[env].windows.installable}}"
+    state: present
+    product_id: "{{vars[env].windows.product_id}}"
+  register: mcafee_installed
+

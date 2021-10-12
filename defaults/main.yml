@@ -1,0 +1,28 @@
+---
+sw_url: "http://xxx.xxx.xxx.xxx/softwares/McAfee" 
+redhat_tmp_dir: /tmp/mcafee
+windows_tmp_dir: C:/Temp/mcafee
+
+prod:
+  redhat:
+    installable: <package_name>.zip
+    checksum: sha1:<checksum>
+
+  windows:
+    installable: <package_name>.exe
+    product_id: '{product_id}'
+    checksum: <checksum>
+    checksum_algorithm: sha1
+
+nonprod:
+  redhat:
+    installable: <package_name>.zip
+    checksum: sha1:3c69ebfd5d356925004e045aa1021885219be68b
+
+  windows:
+    installable: <package_name>.exe
+    product_id: '{product_id}' 
+    checksum: <checksum>
+    checksum_algorithm: sha1
+
+
